@@ -1,4 +1,4 @@
-﻿using chapter05.before;
+﻿using chapter05.after;
 
 namespace chapter05
 {
@@ -7,7 +7,7 @@ namespace chapter05
         static void Main(string[] args)
         {
             Banner banner = new Banner("Extract Method");
-            banner.print(3);
+            banner.Print(3);
         }
     }
 }

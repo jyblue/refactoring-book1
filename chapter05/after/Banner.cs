@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace chapter05.before
+namespace chapter05.after
 {
     public class Banner
     {
@@ -13,21 +13,23 @@ namespace chapter05.before
 
         public void Print(int times)
         {
-            // 테두리 출력
-            Console.Write("+");
-            for (int i = 0; i < _content.Length; i++)
-            {
-                Console.Write("-");
-            }
-            Console.Write("+");
+            PrintBorder();
 
-            // 내용 출력
+            PrintContent(times);
+
+            PrintBorder();
+        }
+
+        private void PrintContent(int times)
+        {
             for (int i = 0; i < times; i++)
             {
                 Console.WriteLine("|" + _content + "|");
             }
+        }
 
-            // 테두리 출력
+        private void PrintBorder()
+        {
             Console.Write("+");
             for (int i = 0; i < _content.Length; i++)
             {
