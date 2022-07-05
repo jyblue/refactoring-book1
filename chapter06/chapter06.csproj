@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="after\Author.cs" />
+    <Compile Include="after\Book.cs" />
+    <Compile Include="after\IImmutableAuthor.cs" />
     <Compile Include="before\Book.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
