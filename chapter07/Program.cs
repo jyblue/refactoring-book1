@@ -1,4 +1,4 @@
-﻿using chapter07.before;
+﻿using chapter07.after;
 using System;
 
 namespace chapter07
@@ -8,17 +8,17 @@ namespace chapter07
         static void Main(string[] args)
         {
             Item book = new Item(
-                Item.TYPECODE_BOOK,
+                ItemType.Book,
                 "History",
                 4800);
 
             Item dvd = new Item(
-                Item.TYPECODE_DVD,
+                ItemType.DVD,
                 "New York",
                 3000);
 
             Item soft = new Item(
-                Item.TYPECODE_SOFTWARE,
+                ItemType.Software,
                 "Turing",
                 3200);
 
