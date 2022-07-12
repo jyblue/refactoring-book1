@@ -14,7 +14,7 @@ namespace chapter08.after
         private readonly int endX;
         private readonly int endY;
 
-        public Shape(
+        private Shape(
             int typeCode,
             int startX,
             int startY,
@@ -87,6 +87,16 @@ namespace chapter08.after
         private void DrawOval()
         {
             Console.WriteLine("DrawOval=" + this.ToString());
+        }
+
+        public static Shape Create(
+            int typeCode,
+            int startX,
+            int startY,
+            int endX,
+            int endY)
+        {
+            return new Shape(typeCode, startX, startY, endX, endY);
         }
     }
 }
