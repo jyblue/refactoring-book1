@@ -44,6 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="after\Shape.cs" />
+    <Compile Include="after\ShapeLine.cs" />
+    <Compile Include="after\ShapeOval.cs" />
+    <Compile Include="after\ShapeRectangle.cs" />
     <Compile Include="before\Shape.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
