@@ -2,51 +2,32 @@
 
 namespace chapter08.after
 {
-    public class Shape
+    public abstract class Shape
     {
         public const int TYPECODE_LINE = 0;
         public const int TYPECODE_RECTANGLE = 1;
         public const int TYPECODE_OVAL = 2;
 
-        private readonly int typeCode;
         private readonly int startX;
         private readonly int startY;
         private readonly int endX;
         private readonly int endY;
 
-        private Shape(
-            int typeCode,
+        protected Shape(
             int startX,
             int startY,
             int endX,
             int endY)
         {
-            this.typeCode = typeCode;
             this.startX = startX;
             this.startY = startY;
             this.endX = endX;
             this.endY = endY;
         }
 
-        public int GetTypeCode()
-        {
-            return typeCode;
-        }
+        public abstract int GetTypeCode();
 
-        public string GetName()
-        {
-            switch (typeCode)
-            {
-                case TYPECODE_LINE:
-                    return "LINE";
-                case TYPECODE_RECTANGLE:
-                    return "REACTANGLE";
-                case TYPECODE_OVAL:
-                    return "OVAL";
-                default:
-                    return "NULL";
-            }
-        }
+        public abstract string GetName(); 
 
         public override string ToString()
         {
@@ -56,37 +37,13 @@ namespace chapter08.after
                 + "(" + endX + ", " + endY + ") ]";
         }
 
-        public void Draw()
-        {
-            switch (typeCode)
-            {
-                case TYPECODE_LINE:
-                    DrawLine();
-                    break;
-                case TYPECODE_RECTANGLE:
-                    DrawRectangle();
-                    break;
-                case TYPECODE_OVAL:
-                    DrawOval();
-                    break;
-                default:
-                    break;
-            }
-        }
+        public abstract void Draw();
 
-        private void DrawLine()
-        {
-            Console.WriteLine("DrawLine=" + this.ToString());
-        }
-
-        private void DrawRectangle()
-        {
-            Console.WriteLine("DrawRectangle=" + this.ToString());
-        }
+      
 
         private void DrawOval()
         {
-            Console.WriteLine("DrawOval=" + this.ToString());
+            
         }
 
         public static Shape Create(
@@ -96,7 +53,13 @@ namespace chapter08.after
             int endX,
             int endY)
         {
-            return new Shape(typeCode, startX, startY, endX, endY);
+            switch (typeCode)
+            {
+                case TYPECODE_LINE: return new ShapeLine(startX, startY, endX, endY);
+                case TYPECODE_RECTANGLE: return new ShapeRectangle(startX, startY, endX, endY);
+                case TYPECODE_OVAL: return new ShapeOval(startX, startY, endX, endY);
+                default: throw new ArgumentOutOfRangeException(nameof(typeCode));
+            }
         }
     }
 }

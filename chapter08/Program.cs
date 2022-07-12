@@ -6,9 +6,9 @@ namespace chapter08
     {
         static void Main(string[] args)
         {
-            Shape line = Shape.Create(Shape.TYPECODE_LINE, 0, 0, 100, 200);
-            Shape rectangle = Shape.Create(Shape.TYPECODE_RECTANGLE, 10, 20, 30, 40);
-            Shape oval = Shape.Create(Shape.TYPECODE_OVAL, 100, 200, 300, 400);
+            Shape line = Shape.Create(0, 0, 100, 200);
+            Shape rectangle = Shape.Create(10, 20, 30, 40);
+            Shape oval = Shape.Create(100, 200, 300, 400);
 
             Shape[] shape =
             {
